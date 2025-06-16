@@ -1,7 +1,7 @@
 "use client";
 import React ,{ useState }  from "react";
 
-
+import Head from 'next/head';
 
 import Image from "next/image";
 import {
@@ -169,7 +169,17 @@ export default function SalesQualifiedPage() {const [openIndex, setOpenIndex] = 
   };
   return (
     <>
-    
+    <Head>
+        <title>Sales-Qualified Lead Generation</title>
+        <meta property="og:title" content="Sales-Qualified Lead Generation" />
+        <meta property="og:description" content=" We identify and generate leads after taking them through the funnel.
+              Then, we verify their interest in your product." />
+        <meta property="og:image" content="" />
+        {/* <meta property="og:url" content={currentUrl} /> */}
+        <meta property="og:type" content="article" />
+        <meta property="og:site_name" content="QuoreB2B marketing" />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Head>
     <section className="w-full px-4 py-12 bg-white">
         <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center gap-10">
           {/* Text Section */}
