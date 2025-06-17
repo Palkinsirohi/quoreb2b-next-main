@@ -140,7 +140,7 @@ export default function LowNav() {
               {/* Services Dropdown */}
               <div className="relative group">
                 <Link 
-                  href="https://www.quoreb2b.com/service"
+                  href="/Solns"
                   className="flex items-center text-gray-700 hover:text-teal-600 font-bold text-sm tracking-wide transition-all duration-300"
                 >
                   SERVICES
@@ -180,9 +180,13 @@ export default function LowNav() {
               {/* Solutions Dropdown */}
               <div className="relative group">
                 <div className="flex items-center text-gray-700 hover:text-teal-600 font-bold text-sm tracking-wide transition-all duration-300 cursor-pointer">
+                 <Link 
+                  href="/Solns"
+                  className="flex items-center text-gray-700 hover:text-teal-600 font-bold text-sm tracking-wide transition-all duration-300"
+                >
                   SOLUTIONS
                   <ChevronDownIcon className="w-4 h-4 ml-1 group-hover:rotate-180 transition-transform duration-300" />
-                </div>
+              </Link>  </div>
                 
                 {/* Dropdown Menu */}
                 <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-3 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300">
