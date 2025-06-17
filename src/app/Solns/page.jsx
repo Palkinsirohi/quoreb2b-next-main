@@ -9,32 +9,60 @@ import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContai
 import LogoScroll from "@/components/LogoScroll";
 const dataSamples = {
   content: [
-    { name: "Jun 1", value: 75 },
-    { name: "Jun 5", value: 68 },
-    { name: "Jun 10", value: 72 },
-    { name: "Jun 15", value: 65 },
-    { name: "Jun 20", value: 70 },
+    { name: "Jan", value: 150 },
+    { name: "Feb", value: 180 },
+    { name: "Mar", value: 240 },
+    { name: "Apr", value: 220 },
+    { name: "May", value: 270 },
+    { name: "Jun", value: 300 },
+    { name: "Jul", value: 350 },
+    { name: "Aug", value: 400 },
+    { name: "Sep", value: 420 },
+    { name: "Oct", value: 450 },
+    { name: "Nov", value: 475 },
+    { name: "Dec", value: 500 }
   ],
   qualified: [
-    { name: "Jun 1", value: 48 },
-    { name: "Jun 5", value: 52 },
-    { name: "Jun 10", value: 55 },
-    { name: "Jun 15", value: 58 },
-    { name: "Jun 20", value: 61 },
+    { name: "Jan", value: 120 },
+    { name: "Feb", value: 160 },
+    { name: "Mar", value: 190 },
+    { name: "Apr", value: 200 },
+    { name: "May", value: 240 },
+    { name: "Jun", value: 260 },
+    { name: "Jul", value: 280 },
+    { name: "Aug", value: 320 },
+    { name: "Sep", value: 350 },
+    { name: "Oct", value: 370 },
+    { name: "Nov", value: 400 },
+    { name: "Dec", value: 430 }
   ],
   intent: [
-    { name: "Jun 1", value: 92 },
-    { name: "Jun 5", value: 95 },
-    { name: "Jun 10", value: 89 },
-    { name: "Jun 15", value: 93 },
-    { name: "Jun 20", value: 94 },
+    { name: "Jan", value: 200 },
+    { name: "Feb", value: 220 },
+    { name: "Mar", value: 250 },
+    { name: "Apr", value: 270 },
+    { name: "May", value: 290 },
+    { name: "Jun", value: 310 },
+    { name: "Jul", value: 330 },
+    { name: "Aug", value: 360 },
+    { name: "Sep", value: 390 },
+    { name: "Oct", value: 420 },
+    { name: "Nov", value: 450 },
+    { name: "Dec", value: 480 }
   ],
   email: [
-    { name: "Jun 1", value: 55 },
-    { name: "Jun 5", value: 60 },
-    { name: "Jun 10", value: 72 },
-    { name: "Jun 15", value: 66 },
-    { name: "Jun 20", value: 59 },
+    { name: "Jan", value: 100 },
+    { name: "Feb", value: 120 },
+    { name: "Mar", value: 140 },
+    { name: "Apr", value: 160 },
+    { name: "May", value: 180 },
+    { name: "Jun", value: 200 },
+    { name: "Jul", value: 220 },
+    { name: "Aug", value: 240 },
+    { name: "Sep", value: 260 },
+    { name: "Oct", value: 280 },
+    { name: "Nov", value: 300 },
+    { name: "Dec", value: 320 }
   ]
 };
 
@@ -45,7 +73,7 @@ const services = [
     icon: "😊",
     chartData: dataSamples.content,
     stroke: "#00BFFF",
-    image: "/images/service1.jpg",
+    image: "/images/Content.webp",
     link: "/services/content-syndication"
   },
   {
@@ -54,7 +82,7 @@ const services = [
     icon: "✅",
     chartData: dataSamples.qualified,
     stroke: "#32CD32",
-    image: "/images/service2.png",
+    image: "/images/sales.jpg",
     link: "/services/sales-qualified-leads"
   },
   {
@@ -63,7 +91,7 @@ const services = [
     icon: "🎯",
     chartData: dataSamples.intent,
     stroke: "#FF1493",
-    image: "/images/service3.jpeg",
+    image: "/images/intent.webp",
     link: "/services/intent-leads"
   },
   {
@@ -72,11 +100,10 @@ const services = [
     icon: "✉️",
     chartData: dataSamples.email,
     stroke: "#FFA500",
-    image: "/images/service4.webp",
+    image: "/images/email.webp",
     link: "/services/email-marketing"
   }
 ];
-
 const cards = [
   {
     icon: <FaList className="text-gray-600" />,
@@ -219,66 +246,53 @@ export default function QuoreB2BSection() {
         </div>
       </section>
 
-    <section className="relative w-full bg-white overflow-hidden">
-      {services.map((service, idx) => (
-        <div
-          key={idx}
-          className={`w-full py-20 px-6 flex flex-col-reverse md:flex-row ${
-            idx % 2 === 0 ? "md:flex-row" : "md:flex-row-reverse"
-          } items-center gap-10 relative z-10`}
-        >
+     <section className="bg-[#fdfdfd] py-20 px-6">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
+        {services.map((service, idx) => (
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            key={idx}
+            initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: idx * 0.1 }}
-            className="md:w-1/2 space-y-6"
+            transition={{ duration: 0.6, delay: idx * 0.2 }}
+           className="flex flex-col md:flex-row items-center gap-8 bg-white rounded-3xl p-4 shadow-lg  hover:shadow-[0_0_40px_0_#00d9a6] transition-all duration-300"
           >
-            <Link href={service.link}>
-              <h3 className="text-3xl font-bold text-gray-900 hover:text-[#00bfa6] transition-colors duration-200">
-                {service.icon} {service.title}
-              </h3>
-            </Link>
-            <p className="text-gray-600 text-base leading-relaxed max-w-xl">{service.description}</p>
-            <div className="w-full h-80">
-              <ResponsiveContainer width="100%" height="100%">
-                <LineChart data={service.chartData}>
-                  <CartesianGrid strokeDasharray="3 3" />
-                  <XAxis dataKey="name" fontSize={12} />
-                  <YAxis fontSize={12} />
-                  <Tooltip contentStyle={{ fontSize: 12 }} />
-                  <Legend />
-                  <Line
-                    type="monotone"
-                    dataKey="value"
-                    stroke={service.stroke}
-                    strokeWidth={3}
-                    dot={{ r: 3 }}
-                    activeDot={{ r: 6 }}
-                  />
-                </LineChart>
-              </ResponsiveContainer>
+            <div className="md:w-1/2 relative h-80 w-full rounded-3xl overflow-hidden shadow-md">
+              <Image
+                src={service.image}
+                alt={service.title}
+                layout="fill"
+                objectFit="cover"
+                className="rounded-3xl"
+              />
+            </div>
+            <div className="md:w-1/2 space-y-4">
+              <Link href={service.link}>
+                <h3 className="text-2xl font-bold text-[#111827] hover:text-[#00BFA6] transition-colors duration-200">{service.icon} {service.title}</h3>
+              </Link>
+              <p className="text-gray-600 text-sm leading-relaxed">{service.description}</p>
+              <div className="w-full h-60">
+                <ResponsiveContainer width="100%" height="100%">
+                  <LineChart data={service.chartData}>
+                    <CartesianGrid strokeDasharray="3 3" />
+                    <XAxis dataKey="name" fontSize={12} />
+                    <YAxis fontSize={12} domain={[0, 520]} />
+                    <Tooltip contentStyle={{ fontSize: 12 }} />
+                    <Legend />
+                    <Line
+                      type="monotone"
+                      dataKey="value"
+                      stroke={service.stroke}
+                      strokeWidth={2}
+                      dot={{ r: 3 }}
+                      activeDot={{ r: 6 }}
+                    />
+                  </LineChart>
+                </ResponsiveContainer>
+              </div>
             </div>
           </motion.div>
-          <motion.div
-            whileHover={{ scale: 1.03 }}
-            transition={{ duration: 0.4 }}
-            className="md:w-1/2 relative h-64 w-full rounded-3xl overflow-hidden shadow-2xl"
-          >
-            <div className=" relative h-100  w-full rounded-3xl overflow-hidden shadow-md">
-            <Image
-              src={service.image}
-              alt={service.title}
-              layout="fill"
-              objectFit="cover"
-              className="transition-transform duration-500 hover:scale-105  rounded-3xl"
-            /></div>
-          </motion.div>
-        </div>
-      ))}
-
-      {/* Optional organic divider */}
-      <div className="absolute top-0 left-0 w-full h-32 bg-gradient-to-r from-[#e0f7fa] to-white rounded-b-[100%] opacity-30 -z-10" />
-      <div className="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-l from-[#e0f7fa] to-white rounded-t-[100%] opacity-30 -z-10" />
+        ))}
+      </div>
     </section>
     <LogoScroll/>
     </>
